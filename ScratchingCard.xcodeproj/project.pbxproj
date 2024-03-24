@@ -7,11 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20465B4D2BAF140500308A4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B4C2BAF140500308A4E /* ContentView.swift */; };
+		20465B4D2BAF140500308A4E /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B4C2BAF140500308A4E /* MainScreenView.swift */; };
 		20465B4F2BAF140600308A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20465B4E2BAF140600308A4E /* Assets.xcassets */; };
-		20465B522BAF140600308A4E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20465B512BAF140600308A4E /* Preview Assets.xcassets */; };
 		20465B5C2BAF140700308A4E /* ScratchingCargTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B5B2BAF140700308A4E /* ScratchingCargTests.swift */; };
-		20465B662BAF140700308A4E /* ScratchingCargUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B652BAF140700308A4E /* ScratchingCargUITests.swift */; };
+		20465B662BAF140700308A4E /* ScratchingCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B652BAF140700308A4E /* ScratchingCardUITests.swift */; };
 		20465B682BAF140700308A4E /* ScratchingCargUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B672BAF140700308A4E /* ScratchingCargUITestsLaunchTests.swift */; };
 		20465B752BAF151400308A4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B742BAF151400308A4E /* AppDelegate.swift */; };
 		20465B772BAF15FF00308A4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B762BAF15FF00308A4E /* SceneDelegate.swift */; };
@@ -19,6 +18,10 @@
 		20465B7B2BAF170900308A4E /* ViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B7A2BAF170900308A4E /* ViewControllerCoordinator.swift */; };
 		20465B7D2BAF173D00308A4E /* NavigationControllerCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B7C2BAF173D00308A4E /* NavigationControllerCoordinating.swift */; };
 		20465B7F2BAF177100308A4E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B7E2BAF177100308A4E /* AppCoordinator.swift */; };
+		20465B872BB0925000308A4E /* ScratchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B862BB0925000308A4E /* ScratchCardView.swift */; };
+		20465B892BB098E500308A4E /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B882BB098E500308A4E /* MainScreenViewModel.swift */; };
+		20465B8B2BB0991400308A4E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B8A2BB0991400308A4E /* Constants.swift */; };
+		20C4F7532BB0A4B10094D123 /* ChildSizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4F7522BB0A4B10094D123 /* ChildSizeReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,14 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		20465B472BAF140500308A4E /* ScratchingCarg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScratchingCarg.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		20465B4C2BAF140500308A4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		20465B472BAF140500308A4E /* ScratchingCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScratchingCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20465B4C2BAF140500308A4E /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		20465B4E2BAF140600308A4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		20465B512BAF140600308A4E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		20465B572BAF140700308A4E /* ScratchingCargTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScratchingCargTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20465B572BAF140700308A4E /* ScratchingCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScratchingCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20465B5B2BAF140700308A4E /* ScratchingCargTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchingCargTests.swift; sourceTree = "<group>"; };
-		20465B612BAF140700308A4E /* ScratchingCargUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScratchingCargUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		20465B652BAF140700308A4E /* ScratchingCargUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchingCargUITests.swift; sourceTree = "<group>"; };
+		20465B612BAF140700308A4E /* ScratchingCardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScratchingCardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20465B652BAF140700308A4E /* ScratchingCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchingCardUITests.swift; sourceTree = "<group>"; };
 		20465B672BAF140700308A4E /* ScratchingCargUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchingCargUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		20465B742BAF151400308A4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20465B762BAF15FF00308A4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,10 @@
 		20465B7C2BAF173D00308A4E /* NavigationControllerCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerCoordinating.swift; sourceTree = "<group>"; };
 		20465B7E2BAF177100308A4E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		20465B812BAF1CD500308A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		20465B862BB0925000308A4E /* ScratchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchCardView.swift; sourceTree = "<group>"; };
+		20465B882BB098E500308A4E /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
+		20465B8A2BB0991400308A4E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		20C4F7522BB0A4B10094D123 /* ChildSizeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildSizeReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +91,9 @@
 		20465B3E2BAF140400308A4E = {
 			isa = PBXGroup;
 			children = (
-				20465B492BAF140500308A4E /* ScratchingCarg */,
-				20465B5A2BAF140700308A4E /* ScratchingCargTests */,
-				20465B642BAF140700308A4E /* ScratchingCargUITests */,
+				20465B492BAF140500308A4E /* ScratchingCard */,
+				20465B5A2BAF140700308A4E /* ScratchingCardTests */,
+				20465B642BAF140700308A4E /* ScratchingCardUITests */,
 				20465B482BAF140500308A4E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,20 +101,20 @@
 		20465B482BAF140500308A4E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				20465B472BAF140500308A4E /* ScratchingCarg.app */,
-				20465B572BAF140700308A4E /* ScratchingCargTests.xctest */,
-				20465B612BAF140700308A4E /* ScratchingCargUITests.xctest */,
+				20465B472BAF140500308A4E /* ScratchingCard.app */,
+				20465B572BAF140700308A4E /* ScratchingCardTests.xctest */,
+				20465B612BAF140700308A4E /* ScratchingCardUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		20465B492BAF140500308A4E /* ScratchingCarg */ = {
+		20465B492BAF140500308A4E /* ScratchingCard */ = {
 			isa = PBXGroup;
 			children = (
+				20465B852BB0924000308A4E /* Common */,
+				20465B842BB0915E00308A4E /* MainScren */,
 				20465B812BAF1CD500308A4E /* Info.plist */,
-				20465B4C2BAF140500308A4E /* ContentView.swift */,
 				20465B4E2BAF140600308A4E /* Assets.xcassets */,
-				20465B502BAF140600308A4E /* Preview Content */,
 				20465B742BAF151400308A4E /* AppDelegate.swift */,
 				20465B7E2BAF177100308A4E /* AppCoordinator.swift */,
 				20465B7A2BAF170900308A4E /* ViewControllerCoordinator.swift */,
@@ -116,40 +122,51 @@
 				20465B762BAF15FF00308A4E /* SceneDelegate.swift */,
 				20465B782BAF163800308A4E /* InitialSceneCoordinator.swift */,
 			);
-			path = ScratchingCarg;
+			path = ScratchingCard;
 			sourceTree = "<group>";
 		};
-		20465B502BAF140600308A4E /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				20465B512BAF140600308A4E /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		20465B5A2BAF140700308A4E /* ScratchingCargTests */ = {
+		20465B5A2BAF140700308A4E /* ScratchingCardTests */ = {
 			isa = PBXGroup;
 			children = (
 				20465B5B2BAF140700308A4E /* ScratchingCargTests.swift */,
 			);
-			path = ScratchingCargTests;
+			path = ScratchingCardTests;
 			sourceTree = "<group>";
 		};
-		20465B642BAF140700308A4E /* ScratchingCargUITests */ = {
+		20465B642BAF140700308A4E /* ScratchingCardUITests */ = {
 			isa = PBXGroup;
 			children = (
-				20465B652BAF140700308A4E /* ScratchingCargUITests.swift */,
+				20465B652BAF140700308A4E /* ScratchingCardUITests.swift */,
 				20465B672BAF140700308A4E /* ScratchingCargUITestsLaunchTests.swift */,
 			);
-			path = ScratchingCargUITests;
+			path = ScratchingCardUITests;
+			sourceTree = "<group>";
+		};
+		20465B842BB0915E00308A4E /* MainScren */ = {
+			isa = PBXGroup;
+			children = (
+				20465B4C2BAF140500308A4E /* MainScreenView.swift */,
+				20465B882BB098E500308A4E /* MainScreenViewModel.swift */,
+			);
+			path = MainScren;
+			sourceTree = "<group>";
+		};
+		20465B852BB0924000308A4E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				20465B862BB0925000308A4E /* ScratchCardView.swift */,
+				20465B8A2BB0991400308A4E /* Constants.swift */,
+				20C4F7522BB0A4B10094D123 /* ChildSizeReader.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		20465B462BAF140500308A4E /* ScratchingCarg */ = {
+		20465B462BAF140500308A4E /* ScratchingCard */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 20465B6B2BAF140700308A4E /* Build configuration list for PBXNativeTarget "ScratchingCarg" */;
+			buildConfigurationList = 20465B6B2BAF140700308A4E /* Build configuration list for PBXNativeTarget "ScratchingCard" */;
 			buildPhases = (
 				20465B432BAF140500308A4E /* Sources */,
 				20465B442BAF140500308A4E /* Frameworks */,
@@ -159,14 +176,14 @@
 			);
 			dependencies = (
 			);
-			name = ScratchingCarg;
+			name = ScratchingCard;
 			productName = ScratchingCarg;
-			productReference = 20465B472BAF140500308A4E /* ScratchingCarg.app */;
+			productReference = 20465B472BAF140500308A4E /* ScratchingCard.app */;
 			productType = "com.apple.product-type.application";
 		};
-		20465B562BAF140700308A4E /* ScratchingCargTests */ = {
+		20465B562BAF140700308A4E /* ScratchingCardTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 20465B6E2BAF140700308A4E /* Build configuration list for PBXNativeTarget "ScratchingCargTests" */;
+			buildConfigurationList = 20465B6E2BAF140700308A4E /* Build configuration list for PBXNativeTarget "ScratchingCardTests" */;
 			buildPhases = (
 				20465B532BAF140700308A4E /* Sources */,
 				20465B542BAF140700308A4E /* Frameworks */,
@@ -177,14 +194,14 @@
 			dependencies = (
 				20465B592BAF140700308A4E /* PBXTargetDependency */,
 			);
-			name = ScratchingCargTests;
+			name = ScratchingCardTests;
 			productName = ScratchingCargTests;
-			productReference = 20465B572BAF140700308A4E /* ScratchingCargTests.xctest */;
+			productReference = 20465B572BAF140700308A4E /* ScratchingCardTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		20465B602BAF140700308A4E /* ScratchingCargUITests */ = {
+		20465B602BAF140700308A4E /* ScratchingCardUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 20465B712BAF140700308A4E /* Build configuration list for PBXNativeTarget "ScratchingCargUITests" */;
+			buildConfigurationList = 20465B712BAF140700308A4E /* Build configuration list for PBXNativeTarget "ScratchingCardUITests" */;
 			buildPhases = (
 				20465B5D2BAF140700308A4E /* Sources */,
 				20465B5E2BAF140700308A4E /* Frameworks */,
@@ -195,9 +212,9 @@
 			dependencies = (
 				20465B632BAF140700308A4E /* PBXTargetDependency */,
 			);
-			name = ScratchingCargUITests;
+			name = ScratchingCardUITests;
 			productName = ScratchingCargUITests;
-			productReference = 20465B612BAF140700308A4E /* ScratchingCargUITests.xctest */;
+			productReference = 20465B612BAF140700308A4E /* ScratchingCardUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -223,7 +240,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 20465B422BAF140400308A4E /* Build configuration list for PBXProject "ScratchingCarg" */;
+			buildConfigurationList = 20465B422BAF140400308A4E /* Build configuration list for PBXProject "ScratchingCard" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -236,9 +253,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				20465B462BAF140500308A4E /* ScratchingCarg */,
-				20465B562BAF140700308A4E /* ScratchingCargTests */,
-				20465B602BAF140700308A4E /* ScratchingCargUITests */,
+				20465B462BAF140500308A4E /* ScratchingCard */,
+				20465B562BAF140700308A4E /* ScratchingCardTests */,
+				20465B602BAF140700308A4E /* ScratchingCardUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -248,7 +265,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20465B522BAF140600308A4E /* Preview Assets.xcassets in Resources */,
 				20465B4F2BAF140600308A4E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,10 +291,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				20465B752BAF151400308A4E /* AppDelegate.swift in Sources */,
+				20465B8B2BB0991400308A4E /* Constants.swift in Sources */,
+				20465B892BB098E500308A4E /* MainScreenViewModel.swift in Sources */,
 				20465B7B2BAF170900308A4E /* ViewControllerCoordinator.swift in Sources */,
 				20465B7D2BAF173D00308A4E /* NavigationControllerCoordinating.swift in Sources */,
-				20465B4D2BAF140500308A4E /* ContentView.swift in Sources */,
+				20465B4D2BAF140500308A4E /* MainScreenView.swift in Sources */,
 				20465B7F2BAF177100308A4E /* AppCoordinator.swift in Sources */,
+				20C4F7532BB0A4B10094D123 /* ChildSizeReader.swift in Sources */,
+				20465B872BB0925000308A4E /* ScratchCardView.swift in Sources */,
 				20465B792BAF163800308A4E /* InitialSceneCoordinator.swift in Sources */,
 				20465B772BAF15FF00308A4E /* SceneDelegate.swift in Sources */,
 			);
@@ -296,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20465B662BAF140700308A4E /* ScratchingCargUITests.swift in Sources */,
+				20465B662BAF140700308A4E /* ScratchingCardUITests.swift in Sources */,
 				20465B682BAF140700308A4E /* ScratchingCargUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,12 +326,12 @@
 /* Begin PBXTargetDependency section */
 		20465B592BAF140700308A4E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 20465B462BAF140500308A4E /* ScratchingCarg */;
+			target = 20465B462BAF140500308A4E /* ScratchingCard */;
 			targetProxy = 20465B582BAF140700308A4E /* PBXContainerItemProxy */;
 		};
 		20465B632BAF140700308A4E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 20465B462BAF140500308A4E /* ScratchingCarg */;
+			target = 20465B462BAF140500308A4E /* ScratchingCard */;
 			targetProxy = 20465B622BAF140700308A4E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -443,11 +463,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ScratchingCarg/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = VJ4397ZV9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ScratchingCarg/Info.plist;
+				INFOPLIST_FILE = ScratchingCard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -472,11 +492,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ScratchingCarg/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = VJ4397ZV9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ScratchingCarg/Info.plist;
+				INFOPLIST_FILE = ScratchingCard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -548,7 +568,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ScratchingCarg;
+				TEST_TARGET_NAME = ScratchingCard;
 			};
 			name = Debug;
 		};
@@ -566,14 +586,14 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ScratchingCarg;
+				TEST_TARGET_NAME = ScratchingCard;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		20465B422BAF140400308A4E /* Build configuration list for PBXProject "ScratchingCarg" */ = {
+		20465B422BAF140400308A4E /* Build configuration list for PBXProject "ScratchingCard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				20465B692BAF140700308A4E /* Debug */,
@@ -582,7 +602,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		20465B6B2BAF140700308A4E /* Build configuration list for PBXNativeTarget "ScratchingCarg" */ = {
+		20465B6B2BAF140700308A4E /* Build configuration list for PBXNativeTarget "ScratchingCard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				20465B6C2BAF140700308A4E /* Debug */,
@@ -591,7 +611,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		20465B6E2BAF140700308A4E /* Build configuration list for PBXNativeTarget "ScratchingCargTests" */ = {
+		20465B6E2BAF140700308A4E /* Build configuration list for PBXNativeTarget "ScratchingCardTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				20465B6F2BAF140700308A4E /* Debug */,
@@ -600,7 +620,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		20465B712BAF140700308A4E /* Build configuration list for PBXNativeTarget "ScratchingCargUITests" */ = {
+		20465B712BAF140700308A4E /* Build configuration list for PBXNativeTarget "ScratchingCardUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				20465B722BAF140700308A4E /* Debug */,

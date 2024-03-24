@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  ScratchingCarg
+//  ScratchingCard
 //
 //  Created by Raul Batista on 23.03.2024.
 //

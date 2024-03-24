@@ -1,6 +1,6 @@
 //
 //  InitialSceneCoordinator.swift
-//  ScratchingCarg
+//  ScratchingCard
 //
 //  Created by Raul Batista on 23.03.2024.
 //
@@ -27,7 +27,7 @@ final class InitialSceneCoordinator: SceneCoordinating {
 
 private extension InitialSceneCoordinator {
     func setLaunchscreenWindow() {
-        window.rootViewController = UIHostingController(rootView: UIViewController())
+        window.rootViewController = UIHostingController(rootView: MainScreenView(viewModel: MainScreenViewModel()))
         window.makeKeyAndVisible()
     }
 

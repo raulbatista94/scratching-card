@@ -1,13 +1,13 @@
 //
-//  ScratchingCargUITestsLaunchTests.swift
-//  ScratchingCargUITests
+//  ScratchingCardUITestsLaunchTests.swift
+//  ScratchingCardUITests
 //
 //  Created by Raul Batista on 23.03.2024.
 //
 
 import XCTest
 
-final class ScratchingCargUITestsLaunchTests: XCTestCase {
+final class ScratchingCardUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

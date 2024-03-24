@@ -1,14 +1,14 @@
 //
-//  ScratchingCargTests.swift
-//  ScratchingCargTests
+//  ScratchingCardTests.swift
+//  ScratchingCardTests
 //
 //  Created by Raul Batista on 23.03.2024.
 //
 
 import XCTest
-@testable import ScratchingCarg
+@testable import ScratchingCard
 
-final class ScratchingCargTests: XCTestCase {
+final class ScratchingCardTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
