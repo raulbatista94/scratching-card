@@ -9,12 +9,20 @@ import SwiftUI
 
 struct CardView: View {
     @Binding var scratchedPoints: [CGPoint]
+    @Binding var shouldRevealCode: Bool
+    
+    @State var showingCode: Bool = false
+
+    // MARK: - Private properties
     private let couponCode: String
+
     init(
         couponCode: String,
+        shouldRevealCode: Binding<Bool>,
         scratchedPoints: Binding<[CGPoint]>
     ) {
         self.couponCode = couponCode
+        self._shouldRevealCode = shouldRevealCode
         self._scratchedPoints = scratchedPoints
     }
 
@@ -56,16 +64,25 @@ struct CardView: View {
                 RoundedRectangle(cornerRadius: 20)
                     .fill(Color.white)
             )
-            .mask(
-                Path { path in
-                    path.addLines(scratchedPoints)
-                }
+            .if(!showingCode) {
+                $0.mask(
+                    Path { path in
+                        path.addLines(scratchedPoints)
+                    }
                     .stroke(style: StrokeStyle(
                         lineWidth: 20,
                         lineCap: .round,
                         lineJoin: .round)
                     )
-            )
+                )
+            }
+            .onChange(of: shouldRevealCode) {
+                if $0 {
+                    withAnimation(.linear(duration: 0.3)) {
+                        self.showingCode = true
+                    }
+                }
+            }
         }
     }
 }
@@ -74,6 +91,7 @@ struct CardView: View {
 #Preview {
     CardView(
         couponCode: UUID().uuidString,
+        shouldRevealCode: .constant(false),
         scratchedPoints: .constant([])
     )
 }

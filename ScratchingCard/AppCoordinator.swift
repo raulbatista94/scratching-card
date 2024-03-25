@@ -29,6 +29,7 @@ extension AppCoordinator {
         _ scene: UIScene,
         window: UIWindow
     ) -> Coordinator {
+        
         let coordinator: Coordinator = makeSceneCoordinator(with: window)
 
         activeScenes.append((scene: scene, coordinatorId: ObjectIdentifier(coordinator)))

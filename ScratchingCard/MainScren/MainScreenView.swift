@@ -27,7 +27,8 @@ struct MainScreenView: View {
             Spacer()
 
             CardView(
-                couponCode: viewModel.couponCode,
+                couponCode: viewModel.couponCode, 
+                shouldRevealCode: .constant(false), // We're not sending this info from here
                 scratchedPoints: $viewModel.scratchedPoints
             )
             .shadow(radius: 15)

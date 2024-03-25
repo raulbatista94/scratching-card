@@ -21,7 +21,6 @@ final class ScratchingViewModel: ObservableObject {
     let couponCode = UUID().uuidString
 
     // MARK: - Private properties
-//    private var cardSize: CGSize?
     private let eventSubject = PassthroughSubject<ScratchingViewAction, Never>()
 
     func send(action: ViewAction) {
@@ -32,8 +31,6 @@ final class ScratchingViewModel: ObservableObject {
                 let decodedData = try? JSONDecoder().decode([CGPoint].self, from: storedPoints) {
                 scratchedPoints = decodedData
             }
-        case let .updateScratchCardViewSize(size):
-            cardSize = size
         case let .dragGestureLocationChanged(location):
             let x = (location.x * 100).rounded() / 100
             let y = (location.y * 100).rounded() / 100
@@ -45,31 +42,52 @@ final class ScratchingViewModel: ObservableObject {
 
             scratchedPoints.append(roundedLocation)
         case .didFinishDragGesture:
+            
             isCompletelyScratched = evaluateCompletion()
+
             guard !isCompletelyScratched else {
                 UserDefaults.standard.removeObject(forKey: Constants.scratchedPointsKey)
                 return
             }
-            do {
-                let data = try JSONEncoder().encode(scratchedPoints)
-                UserDefaults.standard.set(data, forKey: Constants.scratchedPointsKey)
-            } catch {
-                self.error = error
-            }
+
+            clearStoredCardInfo()
+
+        case .didTapRevealCode:
+            isCompletelyScratched = true
+            clearStoredCardInfo()
+
         case .didTapDismiss:
             eventSubject.send(.dismiss)
         }
     }
-
+    
+    /// Evaluates if the scratched parts contain a radius of the corner coordinates of the card
+    /// with some extra radius of 50 points.
+    /// - Returns: `Bool` value indicating wether the code should be completely revealed.
     private func evaluateCompletion() -> Bool {
-        let coordinatesX = scratchedPoints.map(\.x)
-        let coordinatesY = scratchedPoints.map(\.y)
-        
-        return coordinatesX.contains { 0...50 ~= $0 }
-        && coordinatesY.contains { 0...50 ~= $0 }
-        && coordinatesY.contains { cardSize.height - 50...cardSize.height ~= $0 }
-        && coordinatesX.contains { cardSize.width - 50...cardSize.width ~= $0 }
+        guard
+            let minX = scratchedPoints.map(\.x).min(),
+            let maxX = scratchedPoints.map(\.x).max(),
+            let minY = scratchedPoints.map(\.y).min(),
+            let maxY = scratchedPoints.map(\.y).max()
+        else {
+            return false
+        }
 
+        return -25...25 ~= minX
+        && -25...25 ~= minY
+        && (cardSize.height - 25)...(cardSize.height + 25) ~= maxY
+        && (cardSize.width - 25)...(cardSize.width + 25) ~= maxX
+    }
+    
+    /// Removes stored information about scratched positions
+    private func clearStoredCardInfo() {
+        do {
+            let data = try JSONEncoder().encode(scratchedPoints)
+            UserDefaults.standard.set(data, forKey: Constants.scratchedPointsKey)
+        } catch {
+            self.error = error
+        }
     }
 }
 
@@ -81,9 +99,9 @@ extension ScratchingViewModel {
 
     enum ViewAction {
         case viewDidAppear
-        case updateScratchCardViewSize(CGSize)
         case dragGestureLocationChanged(CGPoint)
         case didFinishDragGesture
+        case didTapRevealCode
         case didTapDismiss
     }
 }

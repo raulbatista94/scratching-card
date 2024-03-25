@@ -20,9 +20,8 @@ protocol SceneCoordinating: Coordinator {
     init(window: UIWindow)
 }
 
-@MainActor
 extension SceneCoordinating {
-    func setRootCoordinator(_ coordinator: ViewControllerCoordinator, animated: Bool = false) {
+    @MainActor func setRootCoordinator(_ coordinator: ViewControllerCoordinator, animated: Bool = false) {
         childCoordinators = [coordinator]
         coordinator.start()
 

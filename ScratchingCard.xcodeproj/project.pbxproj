@@ -29,6 +29,8 @@
 		20C4F75F2BB171330094D123 /* AppLifecycleResponding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4F75E2BB171330094D123 /* AppLifecycleResponding.swift */; };
 		20C4F7622BB172580094D123 /* ScratchingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4F7612BB172580094D123 /* ScratchingViewModel.swift */; };
 		20C4F7652BB1746D0094D123 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4F7642BB1746D0094D123 /* HostingController.swift */; };
+		20C4F7672BB186650094D123 /* View+If.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4F7662BB186650094D123 /* View+If.swift */; };
+		20C4F76A2BB1A2890094D123 /* CardStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4F7692BB1A2890094D123 /* CardStateModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		20C4F75E2BB171330094D123 /* AppLifecycleResponding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLifecycleResponding.swift; sourceTree = "<group>"; };
 		20C4F7612BB172580094D123 /* ScratchingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchingViewModel.swift; sourceTree = "<group>"; };
 		20C4F7642BB1746D0094D123 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		20C4F7662BB186650094D123 /* View+If.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+If.swift"; sourceTree = "<group>"; };
+		20C4F7692BB1A2890094D123 /* CardStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStateModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 		20465B492BAF140500308A4E /* ScratchingCard */ = {
 			isa = PBXGroup;
 			children = (
+				20C4F7682BB1A2800094D123 /* Models */,
 				20465B852BB0924000308A4E /* Common */,
 				20465B842BB0915E00308A4E /* MainScren */,
 				20C4F7542BB0B6D20094D123 /* ScratchingScreen */,
@@ -210,8 +215,17 @@
 				20C4F7522BB0A4B10094D123 /* ChildSizeReader.swift */,
 				20C4F7572BB15A200094D123 /* ButtonStyle.swift */,
 				20C4F7642BB1746D0094D123 /* HostingController.swift */,
+				20C4F7662BB186650094D123 /* View+If.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		20C4F7682BB1A2800094D123 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				20C4F7692BB1A2890094D123 /* CardStateModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +360,7 @@
 				20C4F7582BB15A200094D123 /* ButtonStyle.swift in Sources */,
 				20C4F75F2BB171330094D123 /* AppLifecycleResponding.swift in Sources */,
 				20465B752BAF151400308A4E /* AppDelegate.swift in Sources */,
+				20C4F76A2BB1A2890094D123 /* CardStateModel.swift in Sources */,
 				20465B8B2BB0991400308A4E /* Constants.swift in Sources */,
 				20C4F75C2BB166250094D123 /* AnimatedBackgroundModifier.swift in Sources */,
 				20465B892BB098E500308A4E /* MainScreenViewModel.swift in Sources */,
@@ -361,6 +376,7 @@
 				20465B872BB0925000308A4E /* CardView.swift in Sources */,
 				20465B792BAF163800308A4E /* MainScreenCoordinator.swift in Sources */,
 				20465B772BAF15FF00308A4E /* SceneDelegate.swift in Sources */,
+				20C4F7672BB186650094D123 /* View+If.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +548,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -561,6 +578,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

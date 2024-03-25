@@ -87,6 +87,15 @@ extension MainScreenCoordinator {
                 hidesNavigationBar: true)
         )
 
+        viewModel.eventPublisher
+            .sink { [weak self] action in
+                switch action {
+                case .dismiss:
+                    self?.navigationController.popViewController(animated: true)
+                }
+            }
+            .store(in: &cancellabes)
+
         return controller
     }
 }
