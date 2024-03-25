@@ -1,5 +1,5 @@
 //
-//  ScratchCardView.swift
+//  CardView.swift
 //  ScratchingCard
 //
 //  Created by Raul Batista on 24.03.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ScratchCardView: View {
+struct CardView: View {
     @Binding var scratchedPoints: [CGPoint]
     private let couponCode: String
     init(
@@ -36,23 +36,26 @@ struct ScratchCardView: View {
                     .font(.title2)
                     .foregroundStyle(Color.white)
             }
-            .frame(width: 205, height: 205)
+            .frame(height: 200)
+            .frame(maxWidth: .infinity)
 
             VStack {
                 Image(systemName: "apple.logo")
+                    .resizable()
+                    .frame(height: 40)
+                    .aspectRatio(contentMode: .fit)
                     .foregroundStyle(Color.black)
                 Text(couponCode)
                     .foregroundStyle(Color.black)
                     .minimumScaleFactor(0.7)
                     .padding(.horizontal)
             }
-            .frame(width: 200, height: 200)
+            .frame(height: 200)
+            .frame(maxWidth: .infinity)
             .background(
                 RoundedRectangle(cornerRadius: 20)
                     .fill(Color.white)
-                    .stroke(.black, style: StrokeStyle(lineWidth: 5))
             )
-            .padding()
             .mask(
                 Path { path in
                     path.addLines(scratchedPoints)
@@ -69,7 +72,7 @@ struct ScratchCardView: View {
 
 #if DEBUG
 #Preview {
-    ScratchCardView(
+    CardView(
         couponCode: UUID().uuidString,
         scratchedPoints: .constant([])
     )

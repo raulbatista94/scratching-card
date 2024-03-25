@@ -26,11 +26,12 @@ struct MainScreenView: View {
 
             Spacer()
 
-            ScratchCardView(
+            CardView(
                 couponCode: viewModel.couponCode,
                 scratchedPoints: $viewModel.scratchedPoints
             )
             .shadow(radius: 15)
+            .padding(.horizontal)
             .onAppear {
                 viewModel.send(action: .viewDidAppear)
             }

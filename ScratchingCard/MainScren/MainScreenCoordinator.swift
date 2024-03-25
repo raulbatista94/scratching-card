@@ -80,9 +80,12 @@ extension MainScreenCoordinator {
         let viewModel = ScratchingViewModel()
         let view = ScratchingView(viewModel: viewModel)
         
-        let controller = UIHostingController(rootView: view)
-
-        controller.navigationController?.setNavigationBarHidden(true, animated: false)
+        let controller = HostingController(
+            rootView: view,
+            configuration: .init(
+                hidesBackButton: true,
+                hidesNavigationBar: true)
+        )
 
         return controller
     }
