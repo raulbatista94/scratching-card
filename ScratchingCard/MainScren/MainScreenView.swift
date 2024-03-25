@@ -54,6 +54,8 @@ struct MainScreenView: View {
                     viewModel.send(action: .openActivationScreen)
                 }
                 .buttonStyle(PrimaryButtonStyle())
+                .opacity(viewModel.isCardReadyToBeActivated ? 1 : 0.7)
+                .disabled(!viewModel.isCardReadyToBeActivated)
             }
             .padding(.horizontal)
 

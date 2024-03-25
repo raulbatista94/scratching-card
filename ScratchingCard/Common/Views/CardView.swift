@@ -11,7 +11,7 @@ struct CardView: View {
     @Binding var scratchedPoints: [CGPoint]
     @Binding var shouldRevealCode: Bool
     
-    @State var showingCode: Bool = false
+    @State var showingCode: Bool
 
     // MARK: - Private properties
     private let couponCode: String
@@ -23,6 +23,7 @@ struct CardView: View {
     ) {
         self.couponCode = couponCode
         self._shouldRevealCode = shouldRevealCode
+        self.showingCode = shouldRevealCode.wrappedValue
         self._scratchedPoints = scratchedPoints
     }
 
@@ -40,7 +41,9 @@ struct CardView: View {
                         endPoint: .bottom)
                     )
 
-                Text("Welcome to O2")
+                Text("Scratch the card and then click on activate")
+                    .font(.title3.bold())
+                    .multilineTextAlignment(.center)
                     .font(.title2)
                     .foregroundStyle(Color.white)
             }
