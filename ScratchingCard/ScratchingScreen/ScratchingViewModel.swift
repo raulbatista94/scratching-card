@@ -22,6 +22,7 @@ final class ScratchingViewModel: ObservableObject {
 
     // MARK: - Private properties
     private let eventSubject = PassthroughSubject<ScratchingViewAction, Never>()
+    private var revealTask: Task<Void, Never>?
 
     init(cardStateModel: CardStateModel) {
         scratchedPoints = cardStateModel.scratchedPoints
@@ -45,14 +46,37 @@ final class ScratchingViewModel: ObservableObject {
             isCompletelyScratched = evaluateCompletion()
             storeCardInfo()
         case .didTapRevealCode:
-            isCompletelyScratched = true
-            storeCardInfo()
+            revealTask = Task.detached(operation: { [weak self] in
+                guard let self else {
+                    return
+                }
+
+                await toggleLoading()
+
+                do {
+                    // Act as if this was a heavy operation
+                    try await Task.sleep(nanoseconds: 2_000_000_000)
+                    await self.revealCard()
+                    await self.storeCardInfo()
+                    await toggleLoading()
+                } catch {
+                    await toggleLoading()
+                }
+            })
 
         case .didTapDismiss:
+            revealTask?.cancel()
             eventSubject.send(.dismiss)
         }
     }
-    
+
+    private func toggleLoading() {
+        isLoading.toggle()
+    }
+    private func revealCard() {
+        isCompletelyScratched = true
+    }
+
     /// Evaluates if the scratched parts contain a radius of the corner coordinates of the card
     /// with some extra radius of 50 points.
     /// - Returns: `Bool` value indicating wether the code should be completely revealed.

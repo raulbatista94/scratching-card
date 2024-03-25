@@ -24,7 +24,23 @@ struct ScratchingView: View {
             Spacer()
 
             cardView
-            
+                .if(viewModel.isLoading) { cardView in
+                    ZStack {
+                        cardView
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .fill(Color.black.opacity(0.5))
+                                    .padding(.horizontal)
+
+                                ProgressView()
+                                    .progressViewStyle(.circular)
+                                    .tint(Color.white)
+                                    .scaleEffect(1.5, anchor: .center)
+
+                            }
+                    }
+                }
+
             Spacer()
 
             Button("Reveal Code") {
