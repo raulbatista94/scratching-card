@@ -14,7 +14,7 @@
 		20465B682BAF140700308A4E /* ScratchingCargUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B672BAF140700308A4E /* ScratchingCargUITestsLaunchTests.swift */; };
 		20465B752BAF151400308A4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B742BAF151400308A4E /* AppDelegate.swift */; };
 		20465B772BAF15FF00308A4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B762BAF15FF00308A4E /* SceneDelegate.swift */; };
-		20465B792BAF163800308A4E /* InitialSceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B782BAF163800308A4E /* InitialSceneCoordinator.swift */; };
+		20465B792BAF163800308A4E /* MainScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B782BAF163800308A4E /* MainScreenCoordinator.swift */; };
 		20465B7B2BAF170900308A4E /* ViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B7A2BAF170900308A4E /* ViewControllerCoordinator.swift */; };
 		20465B7D2BAF173D00308A4E /* NavigationControllerCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B7C2BAF173D00308A4E /* NavigationControllerCoordinating.swift */; };
 		20465B7F2BAF177100308A4E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B7E2BAF177100308A4E /* AppCoordinator.swift */; };
@@ -22,6 +22,12 @@
 		20465B892BB098E500308A4E /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B882BB098E500308A4E /* MainScreenViewModel.swift */; };
 		20465B8B2BB0991400308A4E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20465B8A2BB0991400308A4E /* Constants.swift */; };
 		20C4F7532BB0A4B10094D123 /* ChildSizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4F7522BB0A4B10094D123 /* ChildSizeReader.swift */; };
+		20C4F7562BB0B6EC0094D123 /* ScratchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4F7552BB0B6EC0094D123 /* ScratchingView.swift */; };
+		20C4F7582BB15A200094D123 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4F7572BB15A200094D123 /* ButtonStyle.swift */; };
+		20C4F75A2BB163830094D123 /* BubblesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4F7592BB163830094D123 /* BubblesView.swift */; };
+		20C4F75C2BB166250094D123 /* AnimatedBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4F75B2BB166250094D123 /* AnimatedBackgroundModifier.swift */; };
+		20C4F75F2BB171330094D123 /* AppLifecycleResponding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4F75E2BB171330094D123 /* AppLifecycleResponding.swift */; };
+		20C4F7622BB172580094D123 /* ScratchingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C4F7612BB172580094D123 /* ScratchingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +58,7 @@
 		20465B672BAF140700308A4E /* ScratchingCargUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchingCargUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		20465B742BAF151400308A4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20465B762BAF15FF00308A4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		20465B782BAF163800308A4E /* InitialSceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneCoordinator.swift; sourceTree = "<group>"; };
+		20465B782BAF163800308A4E /* MainScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCoordinator.swift; sourceTree = "<group>"; };
 		20465B7A2BAF170900308A4E /* ViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		20465B7C2BAF173D00308A4E /* NavigationControllerCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerCoordinating.swift; sourceTree = "<group>"; };
 		20465B7E2BAF177100308A4E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -61,6 +67,12 @@
 		20465B882BB098E500308A4E /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		20465B8A2BB0991400308A4E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		20C4F7522BB0A4B10094D123 /* ChildSizeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildSizeReader.swift; sourceTree = "<group>"; };
+		20C4F7552BB0B6EC0094D123 /* ScratchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchingView.swift; sourceTree = "<group>"; };
+		20C4F7572BB15A200094D123 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		20C4F7592BB163830094D123 /* BubblesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesView.swift; sourceTree = "<group>"; };
+		20C4F75B2BB166250094D123 /* AnimatedBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedBackgroundModifier.swift; sourceTree = "<group>"; };
+		20C4F75E2BB171330094D123 /* AppLifecycleResponding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLifecycleResponding.swift; sourceTree = "<group>"; };
+		20C4F7612BB172580094D123 /* ScratchingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,14 +125,12 @@
 			children = (
 				20465B852BB0924000308A4E /* Common */,
 				20465B842BB0915E00308A4E /* MainScren */,
+				20C4F7542BB0B6D20094D123 /* ScratchingScreen */,
 				20465B812BAF1CD500308A4E /* Info.plist */,
 				20465B4E2BAF140600308A4E /* Assets.xcassets */,
 				20465B742BAF151400308A4E /* AppDelegate.swift */,
 				20465B7E2BAF177100308A4E /* AppCoordinator.swift */,
-				20465B7A2BAF170900308A4E /* ViewControllerCoordinator.swift */,
-				20465B7C2BAF173D00308A4E /* NavigationControllerCoordinating.swift */,
 				20465B762BAF15FF00308A4E /* SceneDelegate.swift */,
-				20465B782BAF163800308A4E /* InitialSceneCoordinator.swift */,
 			);
 			path = ScratchingCard;
 			sourceTree = "<group>";
@@ -145,6 +155,7 @@
 		20465B842BB0915E00308A4E /* MainScren */ = {
 			isa = PBXGroup;
 			children = (
+				20465B782BAF163800308A4E /* MainScreenCoordinator.swift */,
 				20465B4C2BAF140500308A4E /* MainScreenView.swift */,
 				20465B882BB098E500308A4E /* MainScreenViewModel.swift */,
 			);
@@ -154,11 +165,50 @@
 		20465B852BB0924000308A4E /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				20465B862BB0925000308A4E /* ScratchCardView.swift */,
+				20C4F7632BB173190094D123 /* Utils */,
+				20C4F7602BB171E00094D123 /* Views */,
+				20C4F75D2BB171230094D123 /* Protocol */,
 				20465B8A2BB0991400308A4E /* Constants.swift */,
-				20C4F7522BB0A4B10094D123 /* ChildSizeReader.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		20C4F7542BB0B6D20094D123 /* ScratchingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				20C4F7552BB0B6EC0094D123 /* ScratchingView.swift */,
+				20C4F7612BB172580094D123 /* ScratchingViewModel.swift */,
+			);
+			path = ScratchingScreen;
+			sourceTree = "<group>";
+		};
+		20C4F75D2BB171230094D123 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				20C4F75E2BB171330094D123 /* AppLifecycleResponding.swift */,
+				20465B7A2BAF170900308A4E /* ViewControllerCoordinator.swift */,
+				20465B7C2BAF173D00308A4E /* NavigationControllerCoordinating.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		20C4F7602BB171E00094D123 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				20C4F75B2BB166250094D123 /* AnimatedBackgroundModifier.swift */,
+				20465B862BB0925000308A4E /* ScratchCardView.swift */,
+				20C4F7592BB163830094D123 /* BubblesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		20C4F7632BB173190094D123 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				20C4F7522BB0A4B10094D123 /* ChildSizeReader.swift */,
+				20C4F7572BB15A200094D123 /* ButtonStyle.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,16 +340,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C4F7582BB15A200094D123 /* ButtonStyle.swift in Sources */,
+				20C4F75F2BB171330094D123 /* AppLifecycleResponding.swift in Sources */,
 				20465B752BAF151400308A4E /* AppDelegate.swift in Sources */,
 				20465B8B2BB0991400308A4E /* Constants.swift in Sources */,
+				20C4F75C2BB166250094D123 /* AnimatedBackgroundModifier.swift in Sources */,
 				20465B892BB098E500308A4E /* MainScreenViewModel.swift in Sources */,
 				20465B7B2BAF170900308A4E /* ViewControllerCoordinator.swift in Sources */,
 				20465B7D2BAF173D00308A4E /* NavigationControllerCoordinating.swift in Sources */,
 				20465B4D2BAF140500308A4E /* MainScreenView.swift in Sources */,
 				20465B7F2BAF177100308A4E /* AppCoordinator.swift in Sources */,
+				20C4F7622BB172580094D123 /* ScratchingViewModel.swift in Sources */,
+				20C4F75A2BB163830094D123 /* BubblesView.swift in Sources */,
 				20C4F7532BB0A4B10094D123 /* ChildSizeReader.swift in Sources */,
+				20C4F7562BB0B6EC0094D123 /* ScratchingView.swift in Sources */,
 				20465B872BB0925000308A4E /* ScratchCardView.swift in Sources */,
-				20465B792BAF163800308A4E /* InitialSceneCoordinator.swift in Sources */,
+				20465B792BAF163800308A4E /* MainScreenCoordinator.swift in Sources */,
 				20465B772BAF15FF00308A4E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

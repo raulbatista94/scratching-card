@@ -24,9 +24,9 @@ struct ScratchCardView: View {
                 RoundedRectangle(cornerRadius: 20)
                     .fill(LinearGradient(
                         colors: [
-                            Color(red: 22/255, green: 83/255, blue: 182/255),
+                            Color(red: 0/255, green: 148/255, blue: 213/255),
                             Color(red: 9/255, green: 41/255, blue: 93/255),
-                            Color(red: 4/255, green: 25/255, blue: 61/255)
+                            Color(red: 2/255, green: 44/255, blue: 89/255)
                         ],
                         startPoint: .top,
                         endPoint: .bottom)
@@ -40,7 +40,9 @@ struct ScratchCardView: View {
 
             VStack {
                 Image(systemName: "apple.logo")
+                    .foregroundStyle(Color.black)
                 Text(couponCode)
+                    .foregroundStyle(Color.black)
                     .minimumScaleFactor(0.7)
                     .padding(.horizontal)
             }

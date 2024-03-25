@@ -12,7 +12,7 @@ import UIKit
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     // swiftlint:disable:next implicitly_unwrapped_optional
-    weak var coordinator: InitialSceneCoordinator!
+    weak var coordinator: MainScreenCoordinator!
 
     private lazy var cancellables = Set<AnyCancellable>()
 

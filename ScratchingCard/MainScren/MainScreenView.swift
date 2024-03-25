@@ -16,22 +16,44 @@ struct MainScreenView: View {
     }
 
     var body: some View {
-        ScratchCardView(
-            couponCode: viewModel.couponCode,
-            scratchedPoints: $viewModel.scratchedPoints
-        )
-        .gesture(
-            DragGesture(minimumDistance: 0, coordinateSpace: .local)
-                .onChanged {
-                    viewModel.send(action: .dragGestureLocationChanged($0.location))
+        VStack {
+            Spacer()
+
+            Text("O2 Slovakia")
+                .font(.title.weight(.regular))
+                .shadow(radius: 2, y: 4)
+                .foregroundStyle(.white)
+
+            Spacer()
+
+            ScratchCardView(
+                couponCode: viewModel.couponCode,
+                scratchedPoints: $viewModel.scratchedPoints
+            )
+            .shadow(radius: 15)
+            .onAppear {
+                viewModel.send(action: .viewDidAppear)
+            }
+
+            Spacer()
+
+            HStack(spacing: 16) {
+                Button("Scratch") {
+                    viewModel.send(action: .openScratchScreen)
                 }
-                .onEnded { _ in
-                    viewModel.send(action: .didFinishDragGesture)
+                .buttonStyle(PrimaryButtonStyle())
+
+                Button("Activate") {
+                    viewModel.send(action: .openActivationScreen)
                 }
-        )
-        .onAppear {
-            viewModel.bind()
+                .buttonStyle(PrimaryButtonStyle())
+            }
+            .padding(.horizontal)
+
+            Spacer()
         }
+        .modifier(AnimatedBackgroundModifier())
+
     }
 }
 
