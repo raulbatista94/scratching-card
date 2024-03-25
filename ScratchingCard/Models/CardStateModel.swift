@@ -8,6 +8,7 @@
 import Foundation
 
 struct CardStateModel: Codable {
-    let scratchedPoints: [CGPoint]
-    let isReadyToBeActivated: Bool
+    let id: String
+    var scratchedPoints: [CGPoint]
+    var isReadyToBeActivated: Bool
 }

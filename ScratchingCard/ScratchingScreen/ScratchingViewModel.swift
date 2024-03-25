@@ -16,21 +16,21 @@ final class ScratchingViewModel: ObservableObject {
     @Published var isCompletelyScratched: Bool = false
     @Published var error: Error?
     @Published var isLoading: Bool = false
-    
+    @Published var id: String = UUID().uuidString
+
     @Published var cardSize: CGSize = .zero
-    let couponCode = UUID().uuidString
 
     // MARK: - Private properties
     private let eventSubject = PassthroughSubject<ScratchingViewAction, Never>()
 
+    init(cardStateModel: CardStateModel) {
+        scratchedPoints = cardStateModel.scratchedPoints
+        isCompletelyScratched = cardStateModel.isReadyToBeActivated
+        id = cardStateModel.id
+    }
+
     func send(action: ViewAction) {
         switch action {
-        case .viewDidAppear:
-            if
-                let storedPoints = UserDefaults.standard.data(forKey: Constants.scratchedPointsKey),
-                let decodedData = try? JSONDecoder().decode([CGPoint].self, from: storedPoints) {
-                scratchedPoints = decodedData
-            }
         case let .dragGestureLocationChanged(location):
             let x = (location.x * 100).rounded() / 100
             let y = (location.y * 100).rounded() / 100
@@ -42,19 +42,11 @@ final class ScratchingViewModel: ObservableObject {
 
             scratchedPoints.append(roundedLocation)
         case .didFinishDragGesture:
-            
             isCompletelyScratched = evaluateCompletion()
-
-            guard !isCompletelyScratched else {
-                UserDefaults.standard.removeObject(forKey: Constants.scratchedPointsKey)
-                return
-            }
-
-            clearStoredCardInfo()
-
+            storeCardInfo()
         case .didTapRevealCode:
             isCompletelyScratched = true
-            clearStoredCardInfo()
+            storeCardInfo()
 
         case .didTapDismiss:
             eventSubject.send(.dismiss)
@@ -81,9 +73,14 @@ final class ScratchingViewModel: ObservableObject {
     }
     
     /// Removes stored information about scratched positions
-    private func clearStoredCardInfo() {
+    private func storeCardInfo() {
         do {
-            let data = try JSONEncoder().encode(scratchedPoints)
+            let cardState = CardStateModel(
+                id: id,
+                scratchedPoints: scratchedPoints,
+                isReadyToBeActivated: isCompletelyScratched
+            )
+            let data = try JSONEncoder().encode(cardState)
             UserDefaults.standard.set(data, forKey: Constants.scratchedPointsKey)
         } catch {
             self.error = error
@@ -98,7 +95,6 @@ extension ScratchingViewModel {
     }
 
     enum ViewAction {
-        case viewDidAppear
         case dragGestureLocationChanged(CGPoint)
         case didFinishDragGesture
         case didTapRevealCode

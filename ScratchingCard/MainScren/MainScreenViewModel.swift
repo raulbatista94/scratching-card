@@ -10,8 +10,8 @@ import SwiftUI
 
 final class MainScreenViewModel: ObservableObject {
     enum MainScreenAction {
-        case navigateToScratchScreen
-        case navigateToActivationScreen
+        case navigateToScratchScreen(CardStateModel)
+        case navigateToActivationScreen(CardStateModel)
     }
     
     enum ViewAction {
@@ -21,11 +21,10 @@ final class MainScreenViewModel: ObservableObject {
     }
     
     @Published var scratchedPoints = [CGPoint]()
-    @Published var isCardActivated: Bool = false
+    @Published var isCardReadyToBeActivated: Bool = false
     @Published var error: Error?
-    
-    let couponCode = UUID().uuidString
-    
+    @Published var id = UUID().uuidString
+
     private let eventSubject = PassthroughSubject<MainScreenAction, Never>()
     
     func send(action: ViewAction) {
@@ -33,13 +32,27 @@ final class MainScreenViewModel: ObservableObject {
         case .viewDidAppear:
             if
                 let storedPoints = UserDefaults.standard.data(forKey: Constants.scratchedPointsKey),
-                let decodedData = try? JSONDecoder().decode([CGPoint].self, from: storedPoints) {
-                scratchedPoints = decodedData
+                let cardStateModel = try? JSONDecoder().decode(CardStateModel.self, from: storedPoints) {
+                scratchedPoints = cardStateModel.scratchedPoints
+                isCardReadyToBeActivated = cardStateModel.isReadyToBeActivated
+                id = cardStateModel.id
             }
         case .openScratchScreen:
-            eventSubject.send(.navigateToScratchScreen)
+            eventSubject.send(.navigateToScratchScreen(
+                CardStateModel(
+                    id: id,
+                    scratchedPoints: scratchedPoints,
+                    isReadyToBeActivated: isCardReadyToBeActivated
+                )
+            ))
         case .openActivationScreen:
-            eventSubject.send(.navigateToActivationScreen)
+            eventSubject.send(.navigateToActivationScreen(
+                CardStateModel(
+                    id: id,
+                    scratchedPoints: scratchedPoints,
+                    isReadyToBeActivated: isCardReadyToBeActivated
+                )
+            ))
         }
     }
 }

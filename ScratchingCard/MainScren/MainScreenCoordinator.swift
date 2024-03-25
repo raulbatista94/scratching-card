@@ -44,10 +44,10 @@ private extension MainScreenCoordinator {
                     return
                 }
                 switch action {
-                case .navigateToActivationScreen:
-                    navigationController.pushViewController(scratchScreen(), animated: true)
-                case .navigateToScratchScreen:
-                    navigationController.pushViewController(scratchScreen(), animated: true)
+                case let .navigateToActivationScreen(state):
+                    navigationController.pushViewController(scratchScreen(cardState: state), animated: true)
+                case let .navigateToScratchScreen(state):
+                    navigationController.pushViewController(scratchScreen(cardState: state), animated: true)
             }
         }
         .store(in: &cancellabes)
@@ -76,8 +76,8 @@ extension MainScreenCoordinator {
         setMainScreeView()
     }
 
-    func scratchScreen() -> UIViewController {
-        let viewModel = ScratchingViewModel()
+    func scratchScreen(cardState: CardStateModel) -> UIViewController {
+        let viewModel = ScratchingViewModel(cardStateModel: cardState)
         let view = ScratchingView(viewModel: viewModel)
         
         let controller = HostingController(

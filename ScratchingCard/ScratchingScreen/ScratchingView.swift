@@ -61,7 +61,7 @@ private extension ScratchingView {
     var cardView: some View {
         ChildSizeReader(size: $viewModel.cardSize) {
             CardView(
-                couponCode: viewModel.couponCode,
+                couponCode: viewModel.id,
                 shouldRevealCode: $viewModel.isCompletelyScratched,
                 scratchedPoints: $viewModel.scratchedPoints
             )
@@ -82,13 +82,6 @@ private extension ScratchingView {
                     }
             )
             .padding(.horizontal)
-            .onAppear {
-                // Would be better to send this action only once since we don't want to
-                // perform this operation every time that the view appears. Could be done by implementing
-                // view modifier `onFirstAppear` that would have a flag if the action already happened
-                // so it's not fired more than once.
-                viewModel.send(action: .viewDidAppear)
-            }
         }
         .shadow(
             color: viewModel.isCompletelyScratched
@@ -101,6 +94,13 @@ private extension ScratchingView {
 
 #if DEBUG
 #Preview {
-    ScratchingView(viewModel: ScratchingViewModel())
+    ScratchingView(
+        viewModel: ScratchingViewModel(
+            cardStateModel: .init(
+                id: UUID().uuidString,
+                scratchedPoints: [],
+                isReadyToBeActivated: false)
+        )
+    )
 }
 #endif

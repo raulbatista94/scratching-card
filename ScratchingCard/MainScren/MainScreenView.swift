@@ -27,11 +27,16 @@ struct MainScreenView: View {
             Spacer()
 
             CardView(
-                couponCode: viewModel.couponCode, 
-                shouldRevealCode: .constant(false), // We're not sending this info from here
+                couponCode: viewModel.id,
+                shouldRevealCode: $viewModel.isCardReadyToBeActivated,
                 scratchedPoints: $viewModel.scratchedPoints
             )
-            .shadow(radius: 15)
+            .shadow(
+                color: viewModel.isCardReadyToBeActivated
+                ? Color.green.opacity(0.4)
+                : Color(.sRGBLinear, white: 0, opacity: 0.33),
+                radius: 15
+            )
             .padding(.horizontal)
             .onAppear {
                 viewModel.send(action: .viewDidAppear)
