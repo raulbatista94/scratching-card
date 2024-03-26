@@ -1,5 +1,5 @@
 //
-//  Configuration.swift
+//  AppConfiguration.swift
 //  ScratchingCard
 //
 //  Created by Raul Batista on 25.03.2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Configuration: Decodable {
+struct AppConfiguration: Decodable {
     private enum CodingKeys: String, CodingKey {
         case apiBaseUrl = "API_BASE_URL"
     }
@@ -16,8 +16,8 @@ struct Configuration: Decodable {
 }
 
 // MARK: Static properties
-extension Configuration {
-    static let `default`: Configuration = {
+extension AppConfiguration {
+    static let `default`: AppConfiguration = {
         guard let propertyList = Bundle.main.infoDictionary else {
             fatalError("Unable to get property list.")
         }
@@ -28,7 +28,7 @@ extension Configuration {
 
         let decoder = JSONDecoder()
 
-        guard let configuration = try? decoder.decode(Configuration.self, from: data) else {
+        guard let configuration = try? decoder.decode(AppConfiguration.self, from: data) else {
             fatalError("Unable to decode the Environment configuration file.")
         }
 

@@ -45,7 +45,7 @@ private extension MainScreenCoordinator {
                 }
                 switch action {
                 case let .navigateToActivationScreen(state):
-                    navigationController.pushViewController(scratchScreen(cardState: state), animated: true)
+                    navigationController.pushViewController(activationScreen(cardState: state), animated: true)
                 case let .navigateToScratchScreen(state):
                     navigationController.pushViewController(scratchScreen(cardState: state), animated: true)
             }
@@ -80,12 +80,26 @@ extension MainScreenCoordinator {
         let viewModel = ScratchingViewModel(cardStateModel: cardState)
         let view = ScratchingView(viewModel: viewModel)
         
-        let controller = HostingController(
+        viewModel.eventPublisher
+            .sink { [weak self] action in
+                switch action {
+                case .dismiss:
+                    self?.navigationController.popViewController(animated: true)
+                }
+            }
+            .store(in: &cancellabes)
+
+        return HostingController(
             rootView: view,
             configuration: .init(
                 hidesBackButton: true,
                 hidesNavigationBar: true)
         )
+    }
+
+    func activationScreen(cardState: CardStateModel) -> UIViewController {
+        let viewModel = ActivationViewModel(cardState: cardState)
+        let view = ActivationView(viewModel: viewModel)
 
         viewModel.eventPublisher
             .sink { [weak self] action in
@@ -96,7 +110,12 @@ extension MainScreenCoordinator {
             }
             .store(in: &cancellabes)
 
-        return controller
+        return HostingController(
+            rootView: view,
+            configuration: .init(
+                hidesBackButton: true,
+                hidesNavigationBar: true)
+        )
     }
 }
 

@@ -18,7 +18,7 @@ protocol Endpoint {
 
 extension Endpoint {
     func asRequest() throws -> URLRequest {
-        let urlPath = URL(string: Configuration.default.apiBaseUrl)!.appendingPathComponent(path)
+        let urlPath = URL(string: AppConfiguration.default.apiBaseUrl)!.appendingPathComponent(path)
 
         guard var urlComponents = URLComponents(url: urlPath, resolvingAgainstBaseURL: true) else {
             throw APIError.invalidUrlComponents

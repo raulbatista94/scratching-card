@@ -22,6 +22,7 @@ final class MainScreenViewModel: ObservableObject {
     
     @Published var scratchedPoints = [CGPoint]()
     @Published var isCardReadyToBeActivated: Bool = false
+    @Published var isActivated: Bool = false
     @Published var error: Error?
     @Published var id = UUID().uuidString
 
@@ -36,13 +37,15 @@ final class MainScreenViewModel: ObservableObject {
                 scratchedPoints = cardStateModel.scratchedPoints
                 isCardReadyToBeActivated = cardStateModel.isReadyToBeActivated
                 id = cardStateModel.id
+                isActivated = cardStateModel.isActivated
             }
         case .openScratchScreen:
             eventSubject.send(.navigateToScratchScreen(
                 CardStateModel(
                     id: id,
                     scratchedPoints: scratchedPoints,
-                    isReadyToBeActivated: isCardReadyToBeActivated
+                    isReadyToBeActivated: isCardReadyToBeActivated,
+                    isActivated: isActivated
                 )
             ))
         case .openActivationScreen:
@@ -50,7 +53,8 @@ final class MainScreenViewModel: ObservableObject {
                 CardStateModel(
                     id: id,
                     scratchedPoints: scratchedPoints,
-                    isReadyToBeActivated: isCardReadyToBeActivated
+                    isReadyToBeActivated: isCardReadyToBeActivated,
+                    isActivated: isActivated
                 )
             ))
         }

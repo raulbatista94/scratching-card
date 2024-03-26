@@ -115,7 +115,9 @@ private extension ScratchingView {
             cardStateModel: .init(
                 id: UUID().uuidString,
                 scratchedPoints: [],
-                isReadyToBeActivated: false)
+                isReadyToBeActivated: false,
+                isActivated: true
+            )
         )
     )
 }

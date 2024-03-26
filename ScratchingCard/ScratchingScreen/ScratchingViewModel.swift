@@ -102,7 +102,8 @@ final class ScratchingViewModel: ObservableObject {
             let cardState = CardStateModel(
                 id: id,
                 scratchedPoints: scratchedPoints,
-                isReadyToBeActivated: isCompletelyScratched
+                isReadyToBeActivated: isCompletelyScratched,
+                isActivated: false
             )
             let data = try JSONEncoder().encode(cardState)
             UserDefaults.standard.set(data, forKey: Constants.scratchedPointsKey)

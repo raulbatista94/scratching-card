@@ -18,8 +18,7 @@ struct PrimaryButtonStyle: ButtonStyle {
                 RoundedRectangle(cornerRadius: 4)
                     .fill(configuration.isPressed
                           ? Color.primaryButtonBackground.opacity(0.8)
-                          : Color.primaryButtonBackground
-                         )
+                          : Color.primaryButtonBackground)
             )
     }
 }

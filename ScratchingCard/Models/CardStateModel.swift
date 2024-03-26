@@ -11,4 +11,5 @@ struct CardStateModel: Codable {
     let id: String
     var scratchedPoints: [CGPoint]
     var isReadyToBeActivated: Bool
+    var isActivated: Bool
 }
