@@ -19,7 +19,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "20465B562BAF140700308A4E"
+               BlueprintIdentifier = "2001A98E2BB29BFF00DD56F2"
                BuildableName = "ScratchingCardTests.xctest"
                BlueprintName = "ScratchingCardTests"
                ReferencedContainer = "container:ScratchingCard.xcodeproj">

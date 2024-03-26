@@ -64,5 +64,4 @@ final class ScratchingCardTests: XCTestCase {
             XCTFail("Failed to load CardStateModel from UserDefaults")
         }
     }
-
 }
