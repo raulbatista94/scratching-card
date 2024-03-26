@@ -26,41 +26,11 @@ struct MainScreenView: View {
 
             Spacer()
 
-            CardView(
-                couponCode: viewModel.id,
-                shouldRevealCode: $viewModel.isCardReadyToBeActivated,
-                scratchedPoints: $viewModel.scratchedPoints
-            )
-            .shadow(
-                color: viewModel.isActivated
-                ? Color.green.opacity(0.4)
-                : Color(.sRGBLinear, white: 0, opacity: 0.33),
-                radius: 15
-            )
-            .padding(.horizontal)
-            .onAppear {
-                viewModel.send(action: .viewDidAppear)
-            }
+            cardView
 
             Spacer()
 
-            HStack(spacing: 16) {
-                Button("mainScreen.scratchButtonTitle") {
-                    viewModel.send(action: .openScratchScreen)
-                }
-                .buttonStyle(PrimaryButtonStyle())
-
-                Button(
-                    viewModel.isActivated
-                    ? "mainScreenView.resetButtonTitle"
-                    : "mainScreen.activateButtonTitle"
-                ) {
-                    viewModel.send(action: .openActivationScreen)
-                }
-                .buttonStyle(PrimaryButtonStyle())
-                .opacity(viewModel.isCardReadyToBeActivated ? 1 : 0.7)
-                .disabled(!viewModel.isCardReadyToBeActivated)
-            }
+            actionButtonsStack
             .padding(.horizontal)
 
             Spacer()
@@ -70,11 +40,44 @@ struct MainScreenView: View {
     }
 }
 
-struct DrawingMask: Shape {
-    var path: Path
+// MARK: - Subviews
+private extension MainScreenView {
+    var cardView: some View {
+        CardView(
+            couponCode: viewModel.id,
+            shouldRevealCode: $viewModel.isCardReadyToBeActivated,
+            scratchedPoints: $viewModel.scratchedPoints
+        )
+        .shadow(
+            color: viewModel.isActivated
+            ? Color.green.opacity(0.4)
+            : Color(.sRGBLinear, white: 0, opacity: 0.33),
+            radius: 15
+        )
+        .padding(.horizontal)
+        .onAppear {
+            viewModel.send(action: .viewDidAppear)
+        }
+    }
 
-    func path(in rect: CGRect) -> Path {
-        return path
+    var actionButtonsStack: some View {
+        HStack(spacing: 16) {
+            Button("mainScreen.scratchButtonTitle") {
+                viewModel.send(action: .openScratchScreen)
+            }
+            .buttonStyle(PrimaryButtonStyle())
+
+            Button(
+                viewModel.isActivated
+                ? "mainScreenView.resetButtonTitle"
+                : "mainScreen.activateButtonTitle"
+            ) {
+                viewModel.send(action: .openActivationScreen)
+            }
+            .buttonStyle(PrimaryButtonStyle())
+            .opacity(viewModel.isCardReadyToBeActivated ? 1 : 0.7)
+            .disabled(!viewModel.isCardReadyToBeActivated)
+        }
     }
 }
 

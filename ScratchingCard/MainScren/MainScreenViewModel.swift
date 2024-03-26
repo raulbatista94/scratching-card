@@ -66,6 +66,14 @@ final class MainScreenViewModel: ObservableObject {
 
     private func resetCardInfo() {
         UserDefaults.standard.removeObject(forKey: Constants.scratchedPointsKey)
+        guard
+            UserDefaults.standard.synchronize(),
+            UserDefaults.standard.object(forKey: Constants.scratchedPointsKey) == nil
+        else {
+            print("❌ Failed to remove the data from User defaults")
+            return
+        }
+
         scratchedPoints = []
         isCardReadyToBeActivated = false
         isActivated = false

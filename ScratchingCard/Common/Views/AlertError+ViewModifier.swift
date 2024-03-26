@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct AlertErrorModifier: ViewModifier {
+    // MARK: - Public properties
     let error: AlertError?
     
+    // MARK: - Private properties
     private let primaryButton: Alert.Button
     private let secondaryButton: Alert.Button?
 
@@ -45,7 +47,7 @@ struct AlertErrorModifier: ViewModifier {
     }
 }
 
-// MARK: - View func to show error
+// MARK: - View function to display error
 extension View {
     func alertError(
         error: AlertError?,

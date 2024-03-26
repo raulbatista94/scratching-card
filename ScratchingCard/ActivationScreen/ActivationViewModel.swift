@@ -11,16 +11,6 @@ import SwiftUI
 
 @MainActor
 final class ActivationViewModel: ObservableObject {
-    enum ViewAction {
-        case didTapActivate
-        case didTapDismiss
-        case dismissError
-    }
-
-    enum ActivationViewAction {
-        case dismiss
-    }
-
     // MARK: - Public properties
     let cardState: CardStateModel
     @Published var error: AlertError?
@@ -90,6 +80,16 @@ private extension ActivationViewModel {
 extension ActivationViewModel {
     var eventPublisher: AnyPublisher<ActivationViewAction, Never> {
         eventSubject.eraseToAnyPublisher()
+    }
+
+    enum ViewAction {
+        case didTapActivate
+        case didTapDismiss
+        case dismissError
+    }
+
+    enum ActivationViewAction {
+        case dismiss
     }
 
     enum ActivationViewError: AlertError {

@@ -13,12 +13,13 @@ import SwiftUI
 
 @MainActor
 final class MainScreenCoordinator: SceneCoordinating {
+    // MARK: - Public properties
     var childCoordinators = [Coordinator]()
     let window: UIWindow
-    
-    private var cancellabes = Set<AnyCancellable>()
-
     private(set) lazy var navigationController: UINavigationController = UINavigationController()
+
+    // MARK: - Private properties
+    private var cancellabes = Set<AnyCancellable>()
 
     nonisolated init(window: UIWindow) {
         self.window = window
@@ -54,6 +55,7 @@ private extension MainScreenCoordinator {
     }
 }
 
+// MARK: - App lifecycle
 extension MainScreenCoordinator: AppLifecycleResponding {
     func didDisconnectScene(_ scene: UIScene) {
         childCoordinators.removeAll()
@@ -71,6 +73,7 @@ extension MainScreenCoordinator: AppLifecycleResponding {
 }
 
 
+// MARK: - Navigation to next screens
 extension MainScreenCoordinator {
     func start() {
         setMainScreeView()

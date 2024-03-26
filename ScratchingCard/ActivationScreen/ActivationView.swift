@@ -9,6 +9,7 @@ import Combine
 import SwiftUI
 
 struct ActivationView: View {
+    // MARK: - Public properties
     @ObservedObject var viewModel: ActivationViewModel
 
     var body: some View {
@@ -46,6 +47,7 @@ struct ActivationView: View {
     }
 }
 
+// MARK: - Subviews
 extension ActivationView {
     var backButton: some View {
         Button {
@@ -107,6 +109,7 @@ extension ActivationView {
     }
 }
 
+// MARK: - Previews
 #if DEBUG
 #Preview {
     ActivationView(
