@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct ScratchingView: View {
+    // MARK: - Public properties
     @ObservedObject var viewModel: ScratchingViewModel
 
     init(viewModel: ScratchingViewModel) {
@@ -19,7 +20,6 @@ struct ScratchingView: View {
         VStack(alignment: .leading) {
             backButton
                 .padding(.leading)
-
 
             Spacer()
 
@@ -36,7 +36,6 @@ struct ScratchingView: View {
                                     .progressViewStyle(.circular)
                                     .tint(Color.white)
                                     .scaleEffect(1.5, anchor: .center)
-
                             }
                     }
                 }
@@ -110,6 +109,7 @@ private extension ScratchingView {
     }
 }
 
+// MARK: - Preview
 #if DEBUG
 #Preview {
     ScratchingView(

@@ -11,7 +11,7 @@ import SwiftUI
 
 @MainActor
 final class ScratchingViewModel: ObservableObject {
-    // MARK: - Public porperties
+    // MARK: - Public properties
     @Published var scratchedPoints = [CGPoint]()
     @Published var isCompletelyScratched: Bool = false
     @Published var error: Error?
@@ -76,6 +76,10 @@ final class ScratchingViewModel: ObservableObject {
     private func revealCard() {
         isCompletelyScratched = true
     }
+
+    // TODO: - This definitely should be improved and better logic should be added here cause
+    // sometimes it just doesn't work as expected. Ideal would be create some kind of matrix of 0 and 1
+    // where the values would be changed and when certain percentage is uncovered we would reveal the whole code.
 
     /// Evaluates if the scratched parts contain a radius of the corner coordinates of the card
     /// with some extra radius of 100 points.

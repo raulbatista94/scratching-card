@@ -9,23 +9,14 @@ import Combine
 import SwiftUI
 
 final class MainScreenViewModel: ObservableObject {
-    enum MainScreenAction {
-        case navigateToScratchScreen(CardStateModel)
-        case navigateToActivationScreen(CardStateModel)
-    }
-    
-    enum ViewAction {
-        case viewDidAppear
-        case openScratchScreen
-        case openActivationScreen
-    }
-    
+    // MARK: - Public properties
     @Published var scratchedPoints = [CGPoint]()
     @Published var isCardReadyToBeActivated: Bool = false
     @Published var isActivated: Bool = false
     @Published var error: Error?
     @Published var id = UUID().uuidString
 
+    // MARK: - Private properties
     private let eventSubject = PassthroughSubject<MainScreenAction, Never>()
     
     func send(action: ViewAction) {
@@ -83,6 +74,17 @@ final class MainScreenViewModel: ObservableObject {
 extension MainScreenViewModel {
     var eventPublisher: AnyPublisher<MainScreenAction, Never> {
         eventSubject.eraseToAnyPublisher()
+    }
+
+    enum MainScreenAction {
+        case navigateToScratchScreen(CardStateModel)
+        case navigateToActivationScreen(CardStateModel)
+    }
+
+    enum ViewAction {
+        case viewDidAppear
+        case openScratchScreen
+        case openActivationScreen
     }
 }
 
