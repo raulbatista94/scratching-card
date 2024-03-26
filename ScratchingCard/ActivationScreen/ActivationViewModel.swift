@@ -54,6 +54,7 @@ final class ActivationViewModel: ObservableObject {
                    numericValue > 6.1 {
                     isActivated = true
                     isLoading = false
+                    storeActivatedCardInfo()
                 } else {
                     error = ActivationViewError.failedToActivateCode
                 }
@@ -65,27 +66,49 @@ final class ActivationViewModel: ObservableObject {
             error = nil
         }
     }
+}
+
+// MARK: - Private API
+private extension ActivationViewModel {
+    func storeActivatedCardInfo() {
+        do {
+            let cardState = CardStateModel(
+                id: cardState.id,
+                scratchedPoints: cardState.scratchedPoints,
+                isReadyToBeActivated: cardState.isReadyToBeActivated,
+                isActivated: isActivated
+            )
+            let data = try JSONEncoder().encode(cardState)
+            UserDefaults.standard.set(data, forKey: Constants.scratchedPointsKey)
+        } catch {
+            self.error = ActivationViewError.failedToStoreCardInfo
+        }
+    }
+}
+
+// MARK: - Utils
+extension ActivationViewModel {
+    var eventPublisher: AnyPublisher<ActivationViewAction, Never> {
+        eventSubject.eraseToAnyPublisher()
+    }
 
     enum ActivationViewError: AlertError {
         case failedToActivateCode
+        case failedToStoreCardInfo
 
         var localizedTitle: String {
             switch self {
-            case .failedToActivateCode:
-                "Something went wrong"
+            case .failedToActivateCode, .failedToStoreCardInfo:
+                String(localized: "activationView.errorTitle")
             }
         }
         var localizedMessage: String {
             switch self {
             case .failedToActivateCode:
-                "Failed to activate the code. Please try again later."
+                String(localized: "activationView.errorMessage")
+            case .failedToStoreCardInfo:
+                String(localized: "activationView.storeInfoErrorMessage")
             }
         }
-    }
-}
-
-extension ActivationViewModel {
-    var eventPublisher: AnyPublisher<ActivationViewAction, Never> {
-        eventSubject.eraseToAnyPublisher()
     }
 }

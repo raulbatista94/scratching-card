@@ -17,8 +17,8 @@ struct ActivationView: View {
 
             Text(
                 viewModel.isActivated
-                ? "Your code is activated"
-                : "Activate your code"
+                ? "activationView.alreadyActivated"
+                : "activationView.activateCode"
             )
                 .font(.title.weight(.regular))
                 .shadow(radius: 2, y: 4)
@@ -39,7 +39,7 @@ struct ActivationView: View {
         .alertError(
             error: viewModel.error,
             primaryButton: .default(
-                Text("Got it"),
+                Text("activationView.alert.dismissButton"),
                 action: { viewModel.send(action: .dismissError) }
             )
         )
@@ -69,7 +69,7 @@ extension ActivationView {
     var cardView: some View {
         CardView(
             couponCode: viewModel.cardState.id,
-            shouldRevealCode: .constant(viewModel.cardState.isReadyToBeActivated),
+            shouldRevealCode: .constant(viewModel.cardState.isReadyToBeActivated || viewModel.cardState.isActivated),
             scratchedPoints: .constant(viewModel.cardState.scratchedPoints)
         )
         .if(viewModel.isLoading) { cardView in
@@ -97,7 +97,7 @@ extension ActivationView {
     }
 
     var activationButton: some View {
-        Button("Activate Code") {
+        Button("activationView.actionButtonTitle") {
             viewModel.send(action: .didTapActivate)
         }
         .buttonStyle(PrimaryButtonStyle())

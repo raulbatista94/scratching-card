@@ -43,10 +43,12 @@ struct ScratchingView: View {
 
             Spacer()
 
-            Button("Reveal Code") {
+            Button("scratchScreen.revealButtonTitle") {
                 viewModel.send(action: .didTapRevealCode)
             }
             .buttonStyle(PrimaryButtonStyle())
+            .disabled(viewModel.isCompletelyScratched)
+            .opacity(viewModel.isCompletelyScratched ? 0.8 : 1)
             .padding(.horizontal)
             .padding(.bottom)
         }

@@ -49,6 +49,10 @@ final class MainScreenViewModel: ObservableObject {
                 )
             ))
         case .openActivationScreen:
+            guard !isActivated else {
+                resetCardInfo()
+                return
+            }
             eventSubject.send(.navigateToActivationScreen(
                 CardStateModel(
                     id: id,
@@ -58,6 +62,13 @@ final class MainScreenViewModel: ObservableObject {
                 )
             ))
         }
+    }
+
+    private func resetCardInfo() {
+        UserDefaults.standard.removeObject(forKey: Constants.scratchedPointsKey)
+        scratchedPoints = []
+        isCardReadyToBeActivated = false
+        isActivated = false
     }
 }
 

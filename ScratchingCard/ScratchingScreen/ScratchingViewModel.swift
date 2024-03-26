@@ -78,7 +78,7 @@ final class ScratchingViewModel: ObservableObject {
     }
 
     /// Evaluates if the scratched parts contain a radius of the corner coordinates of the card
-    /// with some extra radius of 50 points.
+    /// with some extra radius of 100 points.
     /// - Returns: `Bool` value indicating wether the code should be completely revealed.
     private func evaluateCompletion() -> Bool {
         guard
@@ -90,13 +90,13 @@ final class ScratchingViewModel: ObservableObject {
             return false
         }
 
-        return -25...25 ~= minX
-        && -25...25 ~= minY
-        && (cardSize.height - 25)...(cardSize.height + 25) ~= maxY
-        && (cardSize.width - 25)...(cardSize.width + 25) ~= maxX
+        return -50...50 ~= minX
+        && -50...50 ~= minY
+        && (cardSize.height - 50)...(cardSize.height + 50) ~= maxY
+        && (cardSize.width - 50)...(cardSize.width + 50) ~= maxX
     }
     
-    /// Removes stored information about scratched positions
+    /// Update card info
     private func storeCardInfo() {
         do {
             let cardState = CardStateModel(

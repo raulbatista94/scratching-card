@@ -14,7 +14,7 @@ enum CodeActivationRouter {
 extension CodeActivationRouter: Endpoint {
     var path: String {
         switch self {
-        case .activateCode(let code):
+        case .activateCode:
             "version"
         }
     }

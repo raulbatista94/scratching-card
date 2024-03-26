@@ -19,7 +19,7 @@ struct MainScreenView: View {
         VStack {
             Spacer()
 
-            Text("O2 Slovakia")
+            Text("mainScreen.title")
                 .font(.title.weight(.regular))
                 .shadow(radius: 2, y: 4)
                 .foregroundStyle(.white)
@@ -32,7 +32,7 @@ struct MainScreenView: View {
                 scratchedPoints: $viewModel.scratchedPoints
             )
             .shadow(
-                color: viewModel.isCardReadyToBeActivated
+                color: viewModel.isActivated
                 ? Color.green.opacity(0.4)
                 : Color(.sRGBLinear, white: 0, opacity: 0.33),
                 radius: 15
@@ -45,12 +45,16 @@ struct MainScreenView: View {
             Spacer()
 
             HStack(spacing: 16) {
-                Button("Scratch") {
+                Button("mainScreen.scratchButtonTitle") {
                     viewModel.send(action: .openScratchScreen)
                 }
                 .buttonStyle(PrimaryButtonStyle())
 
-                Button("Activate") {
+                Button(
+                    viewModel.isActivated
+                    ? "mainScreenView.resetButtonTitle"
+                    : "mainScreen.activateButtonTitle"
+                ) {
                     viewModel.send(action: .openActivationScreen)
                 }
                 .buttonStyle(PrimaryButtonStyle())

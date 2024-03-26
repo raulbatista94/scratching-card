@@ -11,8 +11,6 @@ struct CardView: View {
     @Binding var scratchedPoints: [CGPoint]
     @Binding var shouldRevealCode: Bool
     
-    @State var showingCode: Bool
-
     // MARK: - Private properties
     private let couponCode: String
 
@@ -23,7 +21,6 @@ struct CardView: View {
     ) {
         self.couponCode = couponCode
         self._shouldRevealCode = shouldRevealCode
-        self.showingCode = shouldRevealCode.wrappedValue
         self._scratchedPoints = scratchedPoints
     }
 
@@ -41,7 +38,7 @@ struct CardView: View {
                         endPoint: .bottom)
                     )
 
-                Text("Scratch the card and then click on activate")
+                Text("cardView.title")
                     .font(.title3.bold())
                     .multilineTextAlignment(.center)
                     .font(.title2)
@@ -67,7 +64,7 @@ struct CardView: View {
                 RoundedRectangle(cornerRadius: 20)
                     .fill(Color.white)
             )
-            .if(!showingCode) {
+            .if(!shouldRevealCode) {
                 $0.mask(
                     Path { path in
                         path.addLines(scratchedPoints)
@@ -78,13 +75,6 @@ struct CardView: View {
                         lineJoin: .round)
                     )
                 )
-            }
-            .onChange(of: shouldRevealCode) {
-                if $0 {
-                    withAnimation(.linear(duration: 0.3)) {
-                        self.showingCode = true
-                    }
-                }
             }
         }
     }

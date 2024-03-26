@@ -1,0 +1,140 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "activationView.actionButtonTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activate Code"
+          }
+        }
+      }
+    },
+    "activationView.activateCode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activate your code"
+          }
+        }
+      }
+    },
+    "activationView.alert.dismissButton" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Got it"
+          }
+        }
+      }
+    },
+    "activationView.alreadyActivated" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your code is activated"
+          }
+        }
+      }
+    },
+    "activationView.errorMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to activate the code. Please try again later."
+          }
+        }
+      }
+    },
+    "activationView.errorTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong"
+          }
+        }
+      }
+    },
+    "activationView.storeInfoErrorMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to update the activation status of your card."
+          }
+        }
+      }
+    },
+    "cardView.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scratch the card and then click on activate"
+          }
+        }
+      }
+    },
+    "mainScreen.activateButtonTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activate"
+          }
+        }
+      }
+    },
+    "mainScreen.scratchButtonTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scratch"
+          }
+        }
+      }
+    },
+    "mainScreen.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O2 Slovakia"
+          }
+        }
+      }
+    },
+    "mainScreenView.resetButtonTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset"
+          }
+        }
+      }
+    },
+    "scratchScreen.revealButtonTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reveal Code"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -48,6 +48,7 @@
 		20E47E0F2BB28CE000B113E9 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E47E0E2BB28CE000B113E9 /* AlertError.swift */; };
 		20E47E112BB28DCC00B113E9 /* AlertError+ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E47E102BB28DCC00B113E9 /* AlertError+ViewModifier.swift */; };
 		20E47E132BB290CA00B113E9 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 20E47E122BB290CA00B113E9 /* Release.xcconfig */; };
+		20E47E162BB2933300B113E9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 20E47E152BB2933300B113E9 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +83,7 @@
 		20465B7A2BAF170900308A4E /* ViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		20465B7C2BAF173D00308A4E /* NavigationControllerCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerCoordinating.swift; sourceTree = "<group>"; };
 		20465B7E2BAF177100308A4E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		20465B812BAF1CD500308A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		20465B812BAF1CD500308A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20465B862BB0925000308A4E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		20465B882BB098E500308A4E /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		20465B8A2BB0991400308A4E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 		20E47E0E2BB28CE000B113E9 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
 		20E47E102BB28DCC00B113E9 /* AlertError+ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertError+ViewModifier.swift"; sourceTree = "<group>"; };
 		20E47E122BB290CA00B113E9 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		20E47E152BB2933300B113E9 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,14 +166,13 @@
 		20465B492BAF140500308A4E /* ScratchingCard */ = {
 			isa = PBXGroup;
 			children = (
+				20E47E142BB291E300B113E9 /* Resources */,
 				20C4F7872BB1CD3A0094D123 /* ActivationScreen */,
 				20C4F7752BB1C82C0094D123 /* Networking */,
 				20C4F7682BB1A2800094D123 /* Models */,
 				20465B852BB0924000308A4E /* Common */,
 				20465B842BB0915E00308A4E /* MainScren */,
 				20C4F7542BB0B6D20094D123 /* ScratchingScreen */,
-				20465B812BAF1CD500308A4E /* Info.plist */,
-				20465B4E2BAF140600308A4E /* Assets.xcassets */,
 				20465B742BAF151400308A4E /* AppDelegate.swift */,
 				20465B7E2BAF177100308A4E /* AppCoordinator.swift */,
 				20465B762BAF15FF00308A4E /* SceneDelegate.swift */,
@@ -335,6 +336,16 @@
 			path = ActivationScreen;
 			sourceTree = "<group>";
 		};
+		20E47E142BB291E300B113E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				20465B812BAF1CD500308A4E /* Info.plist */,
+				20465B4E2BAF140600308A4E /* Assets.xcassets */,
+				20E47E152BB2933300B113E9 /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -441,6 +452,7 @@
 			files = (
 				20C4F76F2BB1C60B0094D123 /* Development.xcconfig in Resources */,
 				20465B4F2BAF140600308A4E /* Assets.xcassets in Resources */,
+				20E47E162BB2933300B113E9 /* Localizable.xcstrings in Resources */,
 				20E47E132BB290CA00B113E9 /* Release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -668,7 +680,7 @@
 				DEVELOPMENT_TEAM = VJ4397ZV9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ScratchingCard/Info.plist;
+				INFOPLIST_FILE = ScratchingCard/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -698,7 +710,7 @@
 				DEVELOPMENT_TEAM = VJ4397ZV9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ScratchingCard/Info.plist;
+				INFOPLIST_FILE = ScratchingCard/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
